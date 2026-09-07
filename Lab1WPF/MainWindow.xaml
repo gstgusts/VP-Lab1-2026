@@ -1,0 +1,35 @@
+﻿<Window x:Class="Lab1WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="603" Width="800">
+    <Grid Margin="0,0,0,20">
+        <Label Content="Vards:" HorizontalAlignment="Left" Margin="70,44,0,0" VerticalAlignment="Top"/>
+        <Label Content="Uzvards" HorizontalAlignment="Left" Margin="70,92,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.316,-2.194"/>
+        <Label Content="App.Nr." HorizontalAlignment="Left" Margin="70,143,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl1" Content="Grupa" HorizontalAlignment="Left" Margin="70,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="-7.607,4.855"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="129,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Margin="129,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="129,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtGroup" HorizontalAlignment="Left" Margin="129,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAdd" Content="Pievienot" HorizontalAlignment="Left" Margin="196,239,0,0" VerticalAlignment="Top" Click="btnAdd_Click"/>
+        <Label Content="Studenti" HorizontalAlignment="Left" Margin="70,287,0,0" VerticalAlignment="Top" RenderTransformOrigin="-6.501,-0.807"/>
+        <ListView x:Name="lstStudents" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="70,318,21,116">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Vards" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Uzvards" DisplayMemberBinding="{Binding Surname}"/>
+                    <GridViewColumn Header="Apl.Nr." DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Grupa" DisplayMemberBinding="{Binding Group}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Button" HorizontalAlignment="Left" Height="0" Margin="343,518,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnLoad" Content="Ieladet" HorizontalAlignment="Left" Margin="49,462,0,0" VerticalAlignment="Top" Click="btnLoad_Click"/>
+        <Button x:Name="btnSave" Content="Saglabat" HorizontalAlignment="Left" Margin="107,462,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.221,-1.05" Click="btnSave_Click"/>
+
+    </Grid>
+</Window>
